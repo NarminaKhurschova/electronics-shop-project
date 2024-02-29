@@ -26,3 +26,11 @@ def test_all_(product):
 
 def test_string_number():
     assert Item.string_to_number(5.0) == 5
+
+
+def test___repr__(product):
+    assert Item.__repr__(product) == "Item('Телефон', 200, 6)"
+
+
+def test___str__(product):
+    assert  Item.__str__(product) == 'Телефон'
