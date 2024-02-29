@@ -7,6 +7,10 @@ from src.item import *
 def product():
     return Item('Телефон', 200, 6)
 
+@pytest.fixture
+def path():
+    return '../src/items.csv'
+
 
 def test_calculate_total_price(product):
     assert product.calculate_total_price() == 1200
@@ -18,3 +22,7 @@ def test_apply_discount(product):
 
 def test_all_(product):
     assert product.all != []
+
+
+def test_string_number():
+    assert Item.string_to_number(5.0) == 5
